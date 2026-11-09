@@ -1,0 +1,299 @@
+/* ════════════════════════ HF — перший екран (index-f.html) ════════════════════════
+   Макет v2.svg (оновлений), 428×797. --u = 1px макета, масштабується до ширини екрана
+   (макс. 440px). Усі координати взяті з макета; текст — живий (Source Sans 3 /
+   League Gothic), кеглі та baseline вирахувані з контурів SVG.
+   Для тексту з line-height = 1em: top = baseline − 0.81em (Source Sans 3),
+   top = baseline − 0.87em (League Gothic).                                      */
+
+.hf {
+  --u: calc(min(100vw, 440px) / 428);
+
+  position: relative;
+  width: min(100vw, 440px);
+  height: calc(797 * var(--u));
+  margin: 0 auto;
+  overflow: hidden;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  background: #000 url(../img/hero-f-bg.webp) center top / 100% 100% no-repeat;
+}
+/* nullStyle.css жорстко задає шрифти для a/span/p/h1 — повертаємо успадкування */
+.hf :where(a, span, p, b, h1) {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+.hf :where(a) {
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.hf img { max-width: none; }
+.hf svg { display: block; }
+
+/* Абсолютний текстовий рядок: line-height = 1em */
+.hf-t {
+  position: absolute;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* ── Бігуча стрічка ── */
+.hf-ticker {
+  position: absolute;
+  left: calc(-17 * var(--u));
+  top: calc(40 * var(--u));
+  width: calc(463 * var(--u));
+  height: calc(26 * var(--u));
+  overflow: hidden;
+  background: radial-gradient(ellipse 60.92% 465% at 49.78% 0%, rgba(96, 18, 14, 0.7) 46%, rgba(0, 0, 0, 0) 100%);
+  box-shadow: 0 calc(4 * var(--u)) calc(8 * var(--u)) rgba(0, 0, 0, 0.15);
+  border-radius: calc(100 * var(--u));
+  outline: 1px solid #FF517C;
+  outline-offset: -1px;
+}
+.hf-ticker__track {
+  display: flex;
+  width: max-content;
+  padding: calc(2.66 * var(--u)) 0 0 calc(12.5 * var(--u));
+}
+.hf-ticker__group {
+  display: flex;
+  flex-shrink: 0;
+  gap: calc(8.87 * var(--u));
+  padding-right: calc(8.87 * var(--u));
+  animation: hf-ticker 10s linear infinite;
+}
+.hf-ticker__item {
+  display: flex;
+  align-items: center;
+  gap: calc(8 * var(--u));
+  font-size: calc(14 * var(--u));
+  font-weight: 800;
+  line-height: calc(20 * var(--u));
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.hf-ticker__item::before {
+  content: "";
+  flex-shrink: 0;
+  width: calc(10.5 * var(--u));
+  height: calc(15 * var(--u));
+  transform: translateY(calc(0.34 * var(--u)));
+  background: url(../img/flame.svg) center / 100% 100% no-repeat;
+}
+@keyframes hf-ticker {
+  to { transform: translateX(-100%); }
+}
+
+/* ── Заголовок ── */
+.hf-title {
+  font-family: 'LeagueGothic', 'League Gothic', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.hf-title__top {
+  left: calc(34.68 * var(--u));
+  top: calc(78.63 * var(--u));
+  font-size: calc(77.69 * var(--u));
+  color: #FFF3F6;
+}
+.hf-title__bottom {
+  left: calc(39.73 * var(--u));
+  top: calc(140.75 * var(--u));
+  font-size: calc(91.19 * var(--u));
+  background: linear-gradient(180deg, #FF517C calc(11.58 * var(--u)), #DB0B3E calc(80.06 * var(--u)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ── Відео ── */
+.hf-video {
+  position: absolute;
+  left: calc(24 * var(--u));
+  top: calc(245 * var(--u));
+  width: calc(380 * var(--u));
+  height: calc(245 * var(--u));
+}
+.hf-video__wrap {
+  position: absolute;
+  left: calc(1 * var(--u));
+  top: calc(1 * var(--u));
+  width: calc(378 * var(--u));
+  height: calc(243 * var(--u));
+  border-radius: calc(23 * var(--u));
+  overflow: hidden;
+  isolation: isolate;
+}
+.hf-video__fill,
+.hf-video__wrap video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.hf-video__wrap video {
+  display: block;
+  object-fit: cover;
+}
+.hf-video .video-overlay {
+  display: block;
+  background: transparent;
+}
+.hf-video .video-play-btn {
+  position: absolute;
+  left: calc(158.88 * var(--u));
+  top: calc(91.38 * var(--u));
+  width: calc(60.2422 * var(--u));
+  height: calc(60.2422 * var(--u));
+  border-radius: 50%;
+  -webkit-backdrop-filter: blur(calc(8 * var(--u)));
+  backdrop-filter: blur(calc(8 * var(--u)));
+}
+.hf-video__frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  pointer-events: none;
+}
+
+/* ── Ціна ── */
+.hf-price {
+  position: absolute;
+  left: calc(52 * var(--u));
+  top: calc(514 * var(--u));
+  width: calc(324.344 * var(--u));
+  height: calc(76 * var(--u));
+}
+.hf-price__box {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.hf-price__cur {
+  left: calc(46.52 * var(--u));
+  top: calc(8.04 * var(--u));
+  font-size: calc(42.35 * var(--u));
+  font-weight: 800;
+  transform: scaleX(1.2666);
+  transform-origin: 0 0;
+}
+.hf-price__val {
+  left: calc(73.9 * var(--u));
+  top: calc(4.45 * var(--u));
+  font-size: calc(48.72 * var(--u));
+  font-weight: 800;
+}
+.hf-price__note {
+  left: calc(60.19 * var(--u));
+  top: calc(52.98 * var(--u));
+  font-size: calc(12.58 * var(--u));
+  font-weight: 800;
+}
+.hf-price__old {
+  left: calc(144.91 * var(--u));
+  top: calc(25.09 * var(--u));
+  font-size: calc(25.35 * var(--u));
+  font-weight: 700;
+  color: #BBB2B4;
+}
+.hf-price__strike {
+  position: absolute;
+  left: calc(142.77 * var(--u));
+  top: calc(36.59 * var(--u));
+  width: calc(137.49 * var(--u));
+  height: calc(2.816 * var(--u));
+  border-radius: calc(1.408 * var(--u));
+  background: #fff;
+  transform: rotate(-6.605deg);
+}
+
+/* ── CTA ── */
+.hf-cta {
+  position: absolute;
+  left: calc(24 * var(--u));
+  top: calc(606 * var(--u));
+  width: calc(380 * var(--u));
+  height: calc(63 * var(--u));
+  border-radius: calc(24 * var(--u)) calc(31.5 * var(--u)) calc(31.5 * var(--u)) calc(24 * var(--u));
+  background: linear-gradient(90deg, #B0002B 0%, #660A22 100%);
+  animation: ctaPulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+.hf-cta__text {
+  left: calc(8.44 * var(--u));
+  top: calc(20.06 * var(--u));
+  font-size: calc(24 * var(--u));
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.hf-cta__badge-bg {
+  position: absolute;
+  left: calc(286.166 * var(--u));
+  top: calc(-15.834 * var(--u));
+  width: calc(103.667 * var(--u));
+  height: calc(103.667 * var(--u));
+  pointer-events: none;
+}
+.hf-cta__badge {
+  position: absolute;
+  left: calc(296 * var(--u));
+  top: calc(-10 * var(--u));
+  width: calc(84 * var(--u));
+  height: calc(84 * var(--u));
+  transform: rotate(8.64141deg);
+  font-size: calc(30.6 * var(--u));
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.hf-cta__badge-l1 {
+  left: calc(7.64 * var(--u));
+  top: calc(14.51 * var(--u));
+}
+.hf-cta__badge-l2 {
+  left: calc(13.7 * var(--u));
+  top: calc(38.91 * var(--u));
+  letter-spacing: calc(-1.43 * var(--u));
+}
+
+/* ── Переваги ── */
+.hf-perk__icon {
+  position: absolute;
+  top: calc(683 * var(--u));
+  width: calc(40 * var(--u));
+  height: calc(40 * var(--u));
+}
+.hf-perk__icon--1 { left: calc(24 * var(--u)); }
+.hf-perk__icon--2 { left: calc(267 * var(--u)); }
+.hf-perk__text {
+  top: calc(694.54 * var(--u));
+  font-size: calc(16 * var(--u));
+  font-weight: 600;
+}
+.hf-perk__text--1 { left: calc(72 * var(--u)); }
+.hf-perk__text--2 { left: calc(315 * var(--u)); }
+
+/* ── Довіра ── */
+.hf-trust__avatars {
+  position: absolute;
+  left: calc(24 * var(--u));
+  top: calc(736.472 * var(--u));
+  width: calc(95 * var(--u));
+  height: calc(21.1111 * var(--u));
+}
+.hf-trust__text {
+  left: calc(205 * var(--u));
+  top: calc(739.69 * var(--u));
+  font-size: calc(14 * var(--u));
+}
+.hf-trust__text b { font-weight: 700; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hf-ticker__group,
+  .hf-cta { animation: none; }
+}

@@ -1,0 +1,367 @@
+/* =====================================================================
+   hero-variants.css — альтернативні перші екрани для index-b / index-c.
+   Підключається після main-4.css, перевизначає лише .hero--b / .hero--c.
+   ===================================================================== */
+
+/* ════════════════════════════════════ VARIANT B ══════════════════════ */
+.hero--b {
+  height: 70.2rem;
+  background-size: 100% 73.4rem;
+}
+.hero--b .hero__top { gap: 1.4rem; }
+
+.hero__ticker {
+  flex-shrink: 0;
+  width: 46.3rem;
+  overflow: hidden;
+  padding: 0.3rem 0;
+  border-radius: 10rem;
+  background: #DD0C3F;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15);
+  outline: 0.1rem solid #FF517C;
+  outline-offset: -0.1rem;
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1.8rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+/* Безкінечний конвеєр: дві однакові групи, трек зсувається на ширину однієї */
+.hero__ticker-track {
+  display: flex;
+  width: max-content;
+  animation: tickerMove 22s linear infinite;
+}
+.hero__ticker-group {
+  display: flex;
+  align-items: center;
+}
+.hero__ticker-group img {
+  width: 1.05rem;
+  height: 1.5rem;
+  margin-right: 0.8rem;
+}
+.hero__ticker-group span { margin-right: 0.8rem; }
+@keyframes tickerMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__ticker-track { animation: none; }
+}
+
+.hero--b .hero__title-big {
+  white-space: nowrap;
+  font-size: 6.655rem;
+  line-height: 6.655rem;
+}
+.hero--b .hero__title-small {
+  font-size: 6rem;
+  line-height: 5.593rem;
+}
+
+.hero__steps {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.8rem;
+  line-height: 2.253rem;
+}
+.hero__steps img { width: 1.55rem; height: 1.8rem; }
+
+.hero--b .hero__prices {
+  left: 2.5rem;
+  top: 26.1rem;
+  width: 37.8rem;
+  height: 14.2rem;
+}
+.hero--b .hero__karyna { top: 12.7rem; }
+.hero--b .hero__bottom { top: 53.7rem; }
+
+/* ════════════════════════════════════ VARIANT C ══════════════════════ */
+.hero__switch {
+  position: relative;
+  width: 31.4rem;
+  height: 3rem;
+}
+.hero__switch-off {
+  position: absolute;
+  left: 10.4rem;
+  top: 0;
+  width: 21rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  padding: 0.5rem 1.6rem;
+  border-radius: 10rem;
+  background: #fff;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15);
+  color: #000;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  text-transform: uppercase;
+}
+.hero__switch-off svg { width: 1.581rem; height: 1.417rem; }
+.hero__switch-on {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 3.6rem;
+  border-radius: 10rem;
+  background: linear-gradient(149deg, #F01147 0%, #B0002B 100%);
+  box-shadow: 0.5rem 0 0.8rem rgba(0, 0, 0, 0.35), inset 0 0.2rem 0.8rem rgba(255, 255, 255, 0.25), inset 0 -0.2rem 0.8rem rgba(255, 255, 255, 0.25);
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  text-transform: uppercase;
+}
+
+.hero__combo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #FFF3F6;
+  text-transform: uppercase;
+  text-align: center;
+}
+.hero__combo-big {
+  font-family: 'League Gothic', sans-serif;
+  font-weight: 400;
+  font-size: 11.6rem;
+  line-height: 9.6rem;
+  letter-spacing: 1.8rem;
+  margin-right: -1.8rem; /* компенсація letter-spacing останньої літери */
+}
+.hero__combo-small {
+  font-size: 5.3rem;
+  font-weight: 400;
+  line-height: 5.2rem;
+}
+
+.hero--c .hero__pay {
+  position: absolute;
+  left: 2.2rem;
+  top: 23.4rem;
+  width: 38rem;
+  font-size: 2rem;
+  line-height: 1.9rem;
+  text-align: center;
+}
+
+.hero--c .hero__prices {
+  left: 2.5rem;
+  top: 27.4rem;
+  width: 37.8rem;
+  height: 13rem;
+}
+.hero__save {
+  margin-top: 0.2rem;
+  padding: 0 1.4rem;
+  border-radius: 5.2rem;
+  background: #fff;
+  color: #DB0B3E;
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 2.282rem;
+  letter-spacing: 0.02rem;
+  text-transform: uppercase;
+}
+
+.hero--c .hero__karyna { top: 12.2rem; }
+.hero--c .hero__bottom { top: 53rem; }
+
+.hero__courses {
+  position: relative;
+  width: 38rem;
+  padding: 1.4rem 0.8rem;
+  border-radius: 1.793rem;
+  background: rgba(255, 255, 255, 0.04);
+  outline: 0.1rem solid rgba(255, 255, 255, 0.18);
+  outline-offset: -0.1rem;
+  font-size: 1.711rem;
+  line-height: 2.465rem;
+  text-align: right;
+}
+.hero__courses img {
+  position: absolute;
+  left: -1.8rem;
+  top: -3.2rem;
+  width: 16rem;
+  height: 10.3rem;
+}
+
+.hero--c .cta { width: 38rem; border-radius: 2.4rem; }
+
+/* ════════════════════════════════════ VARIANT D (v1_2.svg) ═══════════ */
+.hero--d {
+  height: 69.2rem;
+  background: #000 url(../img/hero-d-bg.webp) center top / 100% 100% no-repeat;
+}
+.hero--d .hero__top { gap: 0; }
+.hero--d .hero__switch-off { gap: 0.7rem; }
+.hero--d .hero__switch-off svg { width: 2.2rem; height: 1.1rem; }
+
+.hero__guarantee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+}
+.hero--d .hero__guarantee { margin-top: 1.42rem; }
+.hero--d .hero__guarantee-big {
+  color: #FFF3F6;
+  font-size: 7.5rem;
+  line-height: 7.5rem;
+}
+.hero--d .hero__guarantee-small {
+  margin-top: -0.84rem;
+  color: #D80A3D;
+  font-size: 5.75rem;
+  line-height: 5.75rem;
+}
+.hero--d .hero__sub {
+  margin-top: 0.96rem;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+.hero--d .hero__sub b { font-weight: 700; }
+
+.hero--d .hero__prices,
+.hero--e .hero__prices {
+  left: 2.5rem;
+  top: 26rem;
+  width: 37.8rem;
+  height: 13rem;
+}
+.hero--d .hero__price--old .strike::after,
+.hero--e .hero__price--old .strike::after {
+  height: 0.4rem;
+  border-radius: 0.2rem;
+  background: #FF003E;
+  transform: rotate(-15deg);
+}
+
+.hero--d .hero__karyna {
+  top: 33rem;
+  height: 18.3rem;
+}
+.hero--d .hero__bottom { top: 52.59rem; }
+
+.hero__refund {
+  width: 100%;
+  margin-bottom: 0.11rem;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  text-align: center;
+  white-space: nowrap;
+}
+.hero__refund b { font-weight: 700; }
+
+/* CTA з печаткою 30 DAYS */
+.hero__cta-seal {
+  position: relative;
+  display: block;
+  width: 38rem;
+  height: 6.3rem;
+}
+.hero__cta-seal .cta {
+  padding-right: 7.4rem;
+  font-size: 3rem;
+  letter-spacing: 0.24rem;
+}
+.hero__cta-seal img {
+  position: absolute;
+  left: 31.243rem;
+  top: -1.4rem;
+  width: 8.511rem;
+  height: 8.437rem;
+  transform: rotate(9.1565deg);
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+/* ════════════════════════════════════ VARIANT E (v2_2.svg) ═══════════ */
+.hero--e {
+  height: 67.5rem;
+  background: #000 url(../img/hero-e-bg.webp) center top / 100% 100% no-repeat;
+}
+.hero--e .hero__top {
+  padding-top: 3.17rem;
+  gap: 0;
+}
+.hero--e .hero__guarantee-big {
+  font-size: 9.2rem;
+  line-height: 9.2rem;
+  background: linear-gradient(180deg, #FF7698 0%, #D80A3D 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero--e .hero__guarantee-small {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.67rem;
+  margin-top: -1.5rem;
+  color: #fff;
+  font-size: 7rem;
+  line-height: 7rem;
+}
+.hero--e .hero__guarantee-small img {
+  width: 5.2rem;
+  height: 5.1rem;
+  margin-top: 0.64rem;
+}
+
+.hero__steps-cards {
+  position: relative;
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.13rem;
+}
+.hero__steps-cards img {
+  width: 11rem;
+  height: 6.7rem;
+  border-radius: 0.938rem;
+}
+.hero__steps-arrow {
+  position: absolute;
+  top: 2.106rem;
+  width: 2.361rem;
+  height: 2.361rem;
+  border-radius: 50%;
+  background: #D80A3D;
+  box-shadow: 0 0 0 0.18rem rgba(216, 10, 61, 0.55);
+}
+.hero__steps-arrow:nth-of-type(1) { left: 10rem; }
+.hero__steps-arrow:nth-of-type(2) { left: 21.6rem; }
+.hero__steps-arrow svg { display: block; width: 100%; height: 100%; }
+
+.hero__note {
+  margin-top: 1.06rem;
+  opacity: 0.7;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  text-align: center;
+}
+
+.hero--e .hero__prices {
+  top: 29.5rem;
+  height: 11.7rem;
+}
+.hero--e .hero__karyna {
+  top: 37.15rem;
+  height: 17.05rem;
+}
+.hero--e .hero__bottom { top: 53.8rem; }
+.hero--e .hero__trust {
+  justify-content: center;
+  gap: 4.6rem;
+}

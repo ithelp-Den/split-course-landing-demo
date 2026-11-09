@@ -1,0 +1,139 @@
+/* ════════════════════════════ S1 — перший екран ════════════════════════════
+   Макет 428×701 (Figma → SVG). --u = 1px макета, масштабується до ширини
+   екрана (макс. 440px). Графіка hero — SVG-файли з Ready.svg; тікер і CTA —
+   HTML з анімаціями.                                                         */
+
+.s1 {
+  --u: calc(min(100vw, 440px) / 428);
+
+  position: relative;
+  width: min(100vw, 440px);
+  height: calc(701 * var(--u));
+  margin: 0 auto;
+  overflow: hidden;
+  font-family: 'Source Sans 3', sans-serif;
+  color: #fff;
+  background: #000;
+}
+.s1 a { font-family: inherit; }
+
+.s1 .visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* Графічні шари з SVG: нижній (фон, фото, заголовок, ціна, перки) і верхній (бейдж -80%) */
+.s1-art {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(428 * var(--u));
+  height: calc(701 * var(--u));
+  max-width: none;
+  display: block;
+  pointer-events: none;
+}
+.s1-art--top { z-index: 2; }
+
+/* ── Бігуча стрічка (анімація без змін) ── */
+.s1-ticker {
+  position: absolute;
+  z-index: 1;
+  top: calc(24 * var(--u));
+  left: calc(-17 * var(--u));
+  width: calc(463 * var(--u));
+  padding: calc(3 * var(--u)) 0;
+  overflow: hidden;
+  background: radial-gradient(ellipse 60.92% 465% at 49.78% 0%, rgba(96, 18, 14, 0.7) 46%, rgba(0, 0, 0, 0) 100%);
+  box-shadow: 0 calc(4 * var(--u)) calc(8 * var(--u)) rgba(0, 0, 0, 0.15);
+  border-radius: calc(100 * var(--u));
+  outline: 1px solid #FF517C;
+  outline-offset: -1px;
+}
+.s1-ticker__track {
+  display: flex;
+  width: max-content;
+}
+.s1-ticker__group {
+  display: flex;
+  flex-shrink: 0;
+  gap: calc(8 * var(--u));
+  padding-right: calc(8 * var(--u));
+  animation: s1-ticker 10s linear infinite;
+}
+.s1-ticker__item {
+  display: flex;
+  align-items: center;
+  gap: calc(8 * var(--u));
+  font-size: calc(14 * var(--u));
+  font-weight: 800;
+  line-height: calc(20 * var(--u));
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.s1-ticker__item::before {
+  content: "";
+  width: calc(10.5 * var(--u));
+  height: calc(15 * var(--u));
+  background: url(../img/hero-flame.webp) center / contain no-repeat;
+}
+@keyframes s1-ticker {
+  to { transform: translateX(-100%); }
+}
+
+/* Прозора зона поверх плашки ціни: клік веде на оплату */
+.s1-price-link {
+  position: absolute;
+  z-index: 1;
+  left: calc(24 * var(--u));
+  top: calc(314 * var(--u));
+  width: calc(193.4 * var(--u));
+  height: calc(122.6 * var(--u));
+}
+
+/* ── CTA (кадр: x 24, y 510, 380×63; радіуси 24/100/100/24) ── */
+.s1-bottom {
+  position: absolute;
+  z-index: 1;
+  left: calc(24 * var(--u));
+  top: calc(510 * var(--u));
+  width: calc(380 * var(--u));
+  height: calc(63 * var(--u));
+}
+.s1-cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0 0 0 calc(8 * var(--u));
+  background: linear-gradient(90deg, #B0002B 0%, #660A22 100%);
+  border-radius: calc(24 * var(--u)) calc(100 * var(--u)) calc(100 * var(--u)) calc(24 * var(--u));
+  color: #fff;
+  text-decoration: none;
+  animation: ctaPulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+.s1-cta__svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.s1-cta__text {
+  font-size: calc(24 * var(--u));
+  font-weight: 900;
+  line-height: calc(18 * var(--u));
+  letter-spacing: calc(1.92 * var(--u));
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .s1-ticker__group,
+  .s1-cta { animation: none; }
+}

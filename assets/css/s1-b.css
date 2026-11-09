@@ -1,0 +1,210 @@
+/* ════════════════════════ S1 (варіант B) — перший екран ════════════════════════
+   Макет 428×726 (Figma). --u = 1px макета, масштабується до ширини
+   екрана (макс. 440px), як у s1.css.                                        */
+
+.s1b {
+  --u: calc(min(100vw, 440px) / 428);
+
+  position: relative;
+  width: min(100vw, 440px);
+  height: calc(726 * var(--u));
+  margin: 0 auto;
+  overflow: hidden;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  background: #000 url(../img/b-bg.webp) center top / 100% 100% no-repeat;
+}
+/* nullStyle.css жорстко задає шрифт — повертаємо успадкування */
+.s1b a,
+.s1b span,
+.s1b p,
+.s1b b {
+  font-family: inherit;
+}
+.s1b a { color: inherit; text-decoration: none; }
+
+/* Спільне для текстових блоків: позиції пораховані від верху line-box (line-height: 1) */
+.s1b-t {
+  position: absolute;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* ── Заголовок ── */
+.s1b-title {
+  font-family: 'League Gothic', 'LeagueGothic', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #FFF3F6;
+}
+.s1b-title__top {
+  top: calc(43.88 * var(--u));
+  left: calc(76 * var(--u));
+  font-size: calc(60 * var(--u));
+  text-shadow: 0 0 calc(16.5 * var(--u)) #4E3727;
+}
+.s1b-title__bottom {
+  top: calc(93.2 * var(--u));
+  left: calc(31.29 * var(--u));
+  font-size: calc(95.24 * var(--u));
+  text-shadow: 0 0 calc(44.25 * var(--u)) #4E3727;
+}
+
+.s1b-subtitle {
+  top: calc(195.79 * var(--u));
+  left: calc(95.61 * var(--u));
+  font-size: calc(20 * var(--u));
+  text-shadow: 0 0 calc(11.8 * var(--u)) #4E3727;
+}
+
+/* ── Ціна ── */
+.s1b-price {
+  position: absolute;
+  top: calc(231 * var(--u));
+  left: calc(36 * var(--u));
+  width: calc(179.64 * var(--u));
+  height: calc(93 * var(--u));
+  border-radius: calc(12 * var(--u));
+  background: linear-gradient(162.89deg, #F01147 -27.9%, #B0002B 90.2%);
+}
+.s1b-price__new {
+  top: calc(9.05 * var(--u));
+  left: calc(6.36 * var(--u));
+  font-size: calc(45 * var(--u));
+  font-weight: 800;
+}
+.s1b-price__note {
+  top: calc(21.56 * var(--u));
+  left: calc(85.6 * var(--u));
+  font-size: calc(20 * var(--u));
+  font-weight: 800;
+}
+.s1b-price__save {
+  position: absolute;
+  top: calc(55.48 * var(--u));
+  left: calc(8 * var(--u));
+  width: calc(163.64 * var(--u));
+  height: calc(23 * var(--u));
+  padding-top: calc(4.26 * var(--u));
+  border-radius: calc(11.5 * var(--u));
+  background: #181514;
+  font-size: calc(15 * var(--u));
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+}
+
+.s1b-old {
+  position: absolute;
+  top: calc(231 * var(--u));
+  left: calc(218.64 * var(--u));
+  width: calc(172.52 * var(--u));
+  height: calc(93.48 * var(--u));
+  border-radius: calc(12 * var(--u));
+  background: rgba(0, 0, 0, 0.35);
+  -webkit-backdrop-filter: blur(calc(29.35 * var(--u)));
+  backdrop-filter: blur(calc(29.35 * var(--u)));
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 800;
+}
+.s1b-old__val {
+  top: calc(24.54 * var(--u));
+  left: calc(7.02 * var(--u));
+  font-size: calc(45 * var(--u));
+}
+.s1b-old__per {
+  top: calc(37 * var(--u));
+  left: calc(111.49 * var(--u));
+  font-size: calc(20 * var(--u));
+}
+.s1b-old__strike {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  overflow: visible;
+}
+
+/* ── Фото (шар з макета) ── */
+.s1b-photo {
+  position: absolute;
+  top: calc(318 * var(--u));
+  left: 0;
+  width: 100%;
+  height: calc(408 * var(--u));
+  max-width: none;
+  pointer-events: none;
+}
+
+/* ── Нижній блок ── */
+.s1b-stop,
+.s1b-perk__text,
+.s1b-trust {
+  text-shadow: 0 calc(2 * var(--u)) calc(15 * var(--u)) rgba(78, 55, 39, 0.55);
+}
+.s1b-stop {
+  top: calc(536.79 * var(--u));
+  left: calc(77.16 * var(--u));
+  font-size: calc(20 * var(--u));
+}
+
+.s1b-cta {
+  position: absolute;
+  top: calc(570 * var(--u));
+  left: calc(24 * var(--u));
+  width: calc(380 * var(--u));
+  height: calc(79 * var(--u));
+  border-radius: calc(24 * var(--u));
+  background: linear-gradient(90deg, #B0002B 0%, #660A22 100%);
+  box-shadow: 0 calc(2 * var(--u)) calc(15 * var(--u)) rgba(78, 55, 39, 0.55);
+  animation: ctaPulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+.s1b-cta__text {
+  top: calc(26.95 * var(--u));
+  left: calc(16.53 * var(--u));
+  font-size: calc(26 * var(--u));
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.s1b-icon {
+  position: absolute;
+  top: calc(664 * var(--u));
+  width: calc(20 * var(--u));
+  height: calc(20 * var(--u));
+  overflow: visible;
+  filter: drop-shadow(0 calc(2 * var(--u)) calc(7.5 * var(--u)) rgba(78, 55, 39, 0.55));
+}
+.s1b-icon--1 { left: calc(24 * var(--u)); }
+.s1b-icon--2 { left: calc(175 * var(--u)); }
+.s1b-icon--3 { left: calc(314 * var(--u)); }
+
+.s1b-perk__text {
+  top: calc(667.13 * var(--u));
+  font-size: calc(14 * var(--u));
+}
+.s1b-perk__text--1 { left: calc(52.05 * var(--u)); }
+.s1b-perk__text--2 { left: calc(203.02 * var(--u)); }
+.s1b-perk__text--3 { left: calc(342 * var(--u)); }
+
+.s1b-avatars {
+  position: absolute;
+  top: calc(697.25 * var(--u));
+  left: calc(24 * var(--u));
+  width: calc(113 * var(--u));
+  height: calc(25.25 * var(--u));
+  filter: drop-shadow(0 calc(2 * var(--u)) calc(7.5 * var(--u)) rgba(78, 55, 39, 0.55));
+}
+.s1b-trust {
+  top: calc(701.94 * var(--u));
+  left: calc(175.96 * var(--u));
+  font-size: calc(16 * var(--u));
+}
+.s1b-trust b { font-weight: 700; }
+
+@media (prefers-reduced-motion: reduce) {
+  .s1b-cta { animation: none; }
+}

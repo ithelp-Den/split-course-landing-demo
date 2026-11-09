@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="preconnect" href="https://itden-cdn.b-cdn.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Kalam&family=League+Gothic&family=Outfit:wght@600;700&family=Righteous&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/nullStyle.css">
+    <link rel="stylesheet" href="assets/css/main-3.css?v=7">
+    <link rel="stylesheet" href="assets/css/new-3.css?v=2">
+    <link rel="stylesheet" href="assets/css/s1.css">
+    <link rel="stylesheet" href="assets/css/rw.css">
+    <link rel="stylesheet" href="assets/css/fig.css">
+    <link rel="stylesheet" href="assets/css/refund.css?v=1">
+    <link rel="stylesheet" href="assets/css/coach.css?v=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>LIFETIME ACCESS</title>
+    
+    
+    <style>
+    .s6-img {
+        transform: scale(1.13);
+    }
+    .s6-slide-v .s6-img {
+        transform: scale(1) !important;
+    }
+    .swiper-slide {
+        max-height: 490px;
+    }
+    @media(max-width: 440px) {
+        .swiper-slide {
+            max-height: 113vw;
+        }
+    }
+    .s1-date-badge { width: 40%; }
+
+    .footer-cta-button,
+    .s25-price-val,
+    .s1-price-val-red,
+    .s25-price-val2,
+    .s1-price-val-gray {
+        display: flex;
+        align-items: center;
+        font-family: 'SourceSans3-Bold';
+        font-weight: 800;
+        text-decoration: none;
+        position: relative;
+    }
+    .s25-price-val2{
+      font-weight: 800;
+font-size: 25px;
+line-height: 119%;
+color: #bdbdbd;
+position: relative;
+    }
+    .s25-price-val2::after{
+      content: "";
+      display: block;
+      height: 2px;
+      width: 40px;
+      position: absolute;
+      top: 20px;
+      left: 0px;
+      background-color: #bdbdbd;
+    }
+    .footer-cta-button svg {
+        padding-right: 2px;
+        padding-left: 5px;
+        min-width: 17.538px;
+    }
+    .s1-price-val-gray:after {
+        content: "";
+        display: block;
+        min-width: 120%;
+        height: 2px;
+        position: absolute;
+        left: -10px;
+        bottom: 48%;
+        background: #bdbdbd;
+    }
+    .s25-price-val { font-size: 43px; }
+
+    /* ── НОВІ: три бейджі під CTA кнопкою (з дизайну) ── */
+    .s1-trust-badges {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 8px;
+    }
+    .s1-trust-badge {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .s1-trust-icon {
+        width: 20px;
+        height: 20px;
+        background: linear-gradient(180deg, #E6889F 0%, rgba(230,136,159,0.50) 100%);
+        border-radius: 100px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .s1-trust-icon svg { display: block; }
+    .s1-trust-label {
+        color: #fff;
+        font-size: 14px;
+        font-family: 'Source Sans 3', sans-serif;
+        font-weight: 400;
+        line-height: 15px;
+        white-space: nowrap;
+    }
+
+    /* ── НОВІ: s25 картки — кольорова бічна смужка ── */
+    .s25-card {
+        position: relative;
+        display: flex;
+        align-items: stretch;
+    }
+
+    /* ── НОВЕ: підпис Karyna у s26 ── */
+    .s26-signature {
+        font-family: 'Kalam', cursive;
+        font-size: 37px;
+        font-weight: 400;
+        color: #1F1A0F;
+        transform: rotate(3deg);
+        display: inline-block;
+        margin-top: 8px;
+    }
+
+    .s7 .mainTitle{
+      text-align: left;
+    }
+
+    /* S5 «Why this program works»: відео замінено постерами (без src/data-src), кнопки плею приховані */
+    /* Клік по картці запускає відео (обробник висить на .video-overlay); кнопку ховаємо, бо іконка вже на постері */
+    .s5 .video-overlay { display: block; }
+    .s5 .video-play-btn { display: none; }
+
+    .s7__answer-bubble { flex: 0 0 301px !important; width: 301px !important; max-width: none; box-sizing: border-box; font-size: 16px; line-height: 16px; padding: 14px 12px; }
+    .s7__avatar { width: 60px !important; height: 60px !important; }
+
+    /* Figma sync (students wins slider) */
+    .s6 .swiper-slide { max-height: none; }
+    .s6-swiper .s6-slide { width: 295px !important; height: 524px !important; }
+    .s6-prev.swiper-button-disabled, .s6-next.swiper-button-disabled { opacity: 1; }
+    .s6-swiper { margin-top: 3px; }
+    .s6-controls { margin-top: 34px; }
+    .s6-nav { gap: 14px; }
+    .s6-prev, .s6-next { width: 45px !important; height: 45px !important; }
+
+    /* Guarantee: the Figma block is a fixed 428x245 card; the section must match it (not scale with --u) */
+    .guarantee { --u: 1px; width: 428px; height: 245px; background: none; overflow: hidden; }
+
+    /* Figma sync (zero-to-splits path) */
+    .s5-grid { gap: 14px 16px; }
+    .s5-card { min-height: 226px; }
+    .s5-card-text { padding: 14px 12px 0; }
+    .s5-card-desc { font-family: 'Outfit-Regular', 'Outfit', sans-serif; font-size: 14px; line-height: 17.64px; }
+    .s5-video-container { height: 101px; }
+</style>
+    
+
+<script src="/_t/l.js" defer data-cfasync="false"></script>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- ════════════════════════════════════ S1 ═══════════════════════════════ -->
+  <section class="hero-fig" aria-label="Hero" style="--u:1px;position:relative;width:428px;height:827px;margin:0 auto;overflow:hidden;background:#000">
+<h1 class="visually-hidden">Front + Middle Split System: pay once and train for life</h1>
+<img src="assets/img/hero/c-hero.webp" width="428" height="827" alt="" style="position:absolute;left:0;top:0;width:428px;height:827px;display:block">
+<div style="position:absolute;left:0;top:36px;width:428px;height:34px;background:#000;z-index:1"></div>
+<div class="s1-ticker" aria-hidden="true" style="color:#FFFFFF;top:40px"><div class="s1-ticker__track"><div class="s1-ticker__group"><span class="s1-ticker__item">BLACK FRIDAY SALE</span><span class="s1-ticker__item">SAVE 80%</span><span class="s1-ticker__item">LIFETIME ACCESS</span><span class="s1-ticker__item">BLACK FRIDAY SALE</span><span class="s1-ticker__item">SAVE 80%</span><span class="s1-ticker__item">LIFETIME ACCESS</span></div><div class="s1-ticker__group"><span class="s1-ticker__item">BLACK FRIDAY SALE</span><span class="s1-ticker__item">SAVE 80%</span><span class="s1-ticker__item">LIFETIME ACCESS</span><span class="s1-ticker__item">BLACK FRIDAY SALE</span><span class="s1-ticker__item">SAVE 80%</span><span class="s1-ticker__item">LIFETIME ACCESS</span></div></div></div>
+<div class="video-card-item" style="position:absolute;left:24px;top:275px;width:380px;height:245px;z-index:2"><div class="video-wrapper-small" style="position:absolute;inset:0;border-radius:24px;overflow:hidden;background:#1B1B1B;border:2px solid #E8345F;box-sizing:border-box"><video class="video-player" poster="assets/img/hero/c-video-poster.webp" data-src="https://itden-cdn.b-cdn.net/vd/PAY%20ONCE%20AND%20TRAIN%20VER2%20(1).mp4" playsinline loop muted preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block"></video><div class="video-overlay"><div class="" aria-label="Play"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="38" fill="rgba(0,0,0,0.4)" stroke="rgba(255,255,255,0.9)" stroke-width="2.5"/><polygon class="icon-play" points="34,24 58,40 34,56" fill="white"/><g class="icon-pause" style="display:none"><rect x="26" y="24" width="9" height="32" rx="2" fill="white"/><rect x="45" y="24" width="9" height="32" rx="2" fill="white"/></g></svg></div></div></div></div>
+<a class="hero-hit" href="https://zubalenok.online/shop/item/13297" data-pay="v1" aria-label="Get lifetime access" style="position:absolute;left:24px;top:636px;width:380px;height:63px;z-index:2"></a>
+<a class="hero-hit" href="https://zubalenok.online/shop/item/13297" data-pay="v1" aria-label="Lifetime access, one time payment" style="position:absolute;left:43px;top:544px;width:343px;height:76px;z-index:2"></a>
+</section>
+
+  <!-- ════════════════════════════════════ S13 ══════════════════════════════ -->
+  <!-- ════════════════════════════════════ A: WHAT YOU GET AFTER PAYMENT ═══ -->
+  <div class="fx-sec fig-whatyouget" style="position:relative;width:428px;height:943px;margin:0 auto;overflow:hidden">
+<img src="assets/img/flat/whatyouget.webp" width="428" height="943" alt="What you get after payment" style="position:absolute;left:0;top:0;width:428px;height:943px;display:block">
+<a href="https://zubalenok.online/shop/item/13297" data-pay="v1" aria-label="Get it now" style="position:absolute;left:38px;top:759px;width:352px;height:54px;border-radius:24px"></a>
+</div>
+
+  <!-- ════════════════════════════════════ S6 ═══════════════════════════════ -->
+  <!--<div class="s6">-->
+  <!--  <div class="s6-header">-->
+  <!--    <h2 class="s6-title">Students Wins</h2>-->
+  <!--  </div>-->
+
+  <!--  <div class="swiper s6-swiper">-->
+  <!--    <div class="swiper-wrapper">-->
+
+  <!--      <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/gallery/6.webp" alt="Review 6" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/gallery/7.webp" alt="Review 7" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide" data-video="https://itden-cdn.b-cdn.net/stretching/vd-3.mp4"><img loading="lazy" src="assets/gallery/8.webp" alt="Review 8" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/gallery/9.webp" alt="Review 9" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/gallery/10.webp" alt="Review 10" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/gallery/11.webp" alt="Review 11" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/gallery/12.webp" alt="Review 12" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide" data-video="https://itden-cdn.b-cdn.net/stretching/vd-4.mp4"><img loading="lazy" src="assets/gallery/13.webp" alt="Review 13" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/gallery/14.webp" alt="Review 14" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/gallery/15.webp" alt="Review 15" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/gallery/16.webp" alt="Review 16" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/gallery/17.webp" alt="Review 17" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide" data-video="https://itden-cdn.b-cdn.net/stretching/video2.MP4"><img loading="lazy" src="assets/gallery/18.webp" alt="Review 18" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/gallery/19.webp" alt="Review 19" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/gallery/20.webp" alt="Review 20" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide" data-video="https://itden-cdn.b-cdn.net/stretching/video4.MP4"><img loading="lazy" src="assets/gallery/21.webp" alt="Review 21" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/gallery/22.webp" alt="Review 22" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/gallery/23.webp" alt="Review 23" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide" data-video="https://itden-cdn.b-cdn.net/stretching/Instagram_15.04.2026_MiddleSplit_Video.mp4"><img loading="lazy" src="assets/gallery/24.webp" alt="Review 24" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide" data-video="https://itden-cdn.b-cdn.net/stretching/video5.MP4"><img loading="lazy" src="assets/gallery/25.webp" alt="Review 25" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/gallery/26.webp" alt="Review 26" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide" data-video="https://itden-cdn.b-cdn.net/stretching/Instagram_15.04.2026_FullSplit_Video.MP4"><img loading="lazy" src="assets/gallery/27.webp" alt="Review 27" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/gallery/28.webp" alt="Review 28" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide" data-video="https://itden-cdn.b-cdn.net/stretching/vd-10.mp4"><img loading="lazy" src="assets/gallery/29.webp" alt="Review 29" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/gallery/30.webp" alt="Review 30" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide" data-video="https://itden-cdn.b-cdn.net/stretching/feur289aew.mp4"><img loading="lazy" src="assets/gallery/31.webp" alt="Review 31" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide" data-video="https://itden-cdn.b-cdn.net/stretching/vd-11.MP4"><img loading="lazy" src="assets/gallery/32.webp" alt="Review 32" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/gallery/33.webp" alt="Review 33" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide" data-video="https://itden-cdn.b-cdn.net/stretching/Splits%20Course%20from%20Zubalenok%20on%20IG.mp4"><img loading="lazy" src="assets/gallery/34.webp" alt="Review 34" class="s6-img"></div>-->
+  <!--              <div class="swiper-slide s6-slide" data-video="https://itden-cdn.b-cdn.net/stretching/sdk23o.MP4"><img loading="lazy" src="assets/gallery/1.webp" alt="Review 1" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/gallery/3.webp" alt="Review 3" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide" data-video="https://itden-cdn.b-cdn.net/stretching/vd-2.mp4"><img loading="lazy" src="assets/gallery/4.webp" alt="Review 4" class="s6-img"></div>-->
+  <!--      <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/gallery/5.webp" alt="Review 5" class="s6-img"></div>-->
+  <!--    </div>-->
+  <!--  </div>-->
+
+  <!--  <div class="s6-controls">-->
+  <!--    <div class="swiper-pagination s6-pagination"></div>-->
+  <!--    <div class="s6-nav">-->
+  <!--      <div class="swiper-button-prev s6-prev"><img src="assets/img/images-slider-arrow.png" alt=""></div>-->
+  <!--      <div class="swiper-button-next s6-next"><img src="assets/img/images-slider-arrow.png" alt=""></div>-->
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--</div>-->
+  
+  <div class="s6">
+    <div class="s6-header">
+      <h2 class="s6-title">Students Wins</h2>
+    </div>
+
+    <div class="swiper s6-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/1.webp" alt="Slide 1" class="s6-img"></div>
+        <div class="swiper-slide s6-slide s6-slide-v" data-video="https://itden-cdn.b-cdn.net/stretching/sdk23o.MP4"><img loading="lazy" src="assets/gallery/1.webp" alt="Video Review 1" class="s6-img"></div>
+        
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/2.webp" alt="Slide 2" class="s6-img"></div>
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/3.webp" alt="Slide 3" class="s6-img"></div>
+        <div class="swiper-slide s6-slide s6-slide-v" data-video="https://itden-cdn.b-cdn.net/stretching/vd-2.mp4"><img loading="lazy" src="assets/gallery/4.webp" alt="Video Review 4" class="s6-img"></div>
+        
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/4.webp" alt="Slide 4" class="s6-img"></div>
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/5.webp" alt="Slide 5" class="s6-img"></div>
+        <div class="swiper-slide s6-slide s6-slide-v" data-video="https://itden-cdn.b-cdn.net/stretching/vd-3.mp4"><img loading="lazy" src="assets/gallery/8.webp" alt="Video Review 8" class="s6-img"></div>
+        
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/6.webp" alt="Slide 6" class="s6-img"></div>
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/7.webp" alt="Slide 7" class="s6-img"></div>
+        <div class="swiper-slide s6-slide s6-slide-v" data-video="https://itden-cdn.b-cdn.net/stretching/vd-4.mp4"><img loading="lazy" src="assets/gallery/13.webp" alt="Video Review 13" class="s6-img"></div>
+        
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/8.webp" alt="Slide 8" class="s6-img"></div>
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/9.webp" alt="Slide 9" class="s6-img"></div>
+        <div class="swiper-slide s6-slide s6-slide-v" data-video="https://itden-cdn.b-cdn.net/stretching/video2.MP4"><img loading="lazy" src="assets/gallery/18.webp" alt="Video Review 18" class="s6-img"></div>
+        
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/10.webp" alt="Slide 10" class="s6-img"></div>
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/11.webp" alt="Slide 11" class="s6-img"></div>
+        <div class="swiper-slide s6-slide s6-slide-v" data-video="https://itden-cdn.b-cdn.net/stretching/video4.MP4"><img loading="lazy" src="assets/gallery/21.webp" alt="Video Review 21" class="s6-img"></div>
+        
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/12.webp" alt="Slide 12" class="s6-img"></div>
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/13.webp" alt="Slide 13" class="s6-img"></div>
+        <div class="swiper-slide s6-slide s6-slide-v" data-video="https://itden-cdn.b-cdn.net/stretching/Instagram_15.04.2026_MiddleSplit_Video.mp4"><img loading="lazy" src="assets/gallery/24.webp" alt="Video Review 24" class="s6-img"></div>
+        
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/14.webp" alt="Slide 14" class="s6-img"></div>
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/15.webp" alt="Slide 15" class="s6-img"></div>
+        <div class="swiper-slide s6-slide s6-slide-v" data-video="https://itden-cdn.b-cdn.net/stretching/video5.MP4"><img loading="lazy" src="assets/gallery/25.webp" alt="Video Review 25" class="s6-img"></div>
+        
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/17.webp" alt="Slide 17" class="s6-img"></div>
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/18.webp" alt="Slide 18" class="s6-img"></div>
+        <div class="swiper-slide s6-slide s6-slide-v" data-video="https://itden-cdn.b-cdn.net/stretching/Instagram_15.04.2026_FullSplit_Video.MP4"><img loading="lazy" src="assets/gallery/27.webp" alt="Video Review 27" class="s6-img"></div>
+        
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/19.webp" alt="Slide 19" class="s6-img"></div>
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/20.webp" alt="Slide 20" class="s6-img"></div>
+        <div class="swiper-slide s6-slide s6-slide-v" data-video="https://itden-cdn.b-cdn.net/stretching/vd-10.mp4"><img loading="lazy" src="assets/gallery/29.webp" alt="Video Review 29" class="s6-img"></div>
+        
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/21.webp" alt="Slide 21" class="s6-img"></div>
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/22.webp" alt="Slide 22" class="s6-img"></div>
+        <div class="swiper-slide s6-slide s6-slide-v" data-video="https://itden-cdn.b-cdn.net/stretching/feur289aew.mp4"><img loading="lazy" src="assets/gallery/31.webp" alt="Video Review 31" class="s6-img"></div>
+        
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/23.webp" alt="Slide 23" class="s6-img"></div>
+        <div class="swiper-slide s6-slide s6-slide-v" data-video="https://itden-cdn.b-cdn.net/stretching/vd-11.MP4"><img loading="lazy" src="assets/gallery/32.webp" alt="Video Review 32" class="s6-img"></div>
+        
+        <div class="swiper-slide s6-slide"><img loading="lazy" src="assets/slider/24.webp" alt="Slide 24" class="s6-img"></div>
+        <div class="swiper-slide s6-slide s6-slide-v" data-video="https://itden-cdn.b-cdn.net/stretching/Splits%20Course%20from%20Zubalenok%20on%20IG.mp4"><img loading="lazy" src="assets/gallery/34.webp" alt="Video Review 34" class="s6-img"></div>
+      </div>
+    </div>
+
+    <div class="s6-controls">
+      <div class="swiper-pagination s6-pagination"></div>
+      <div class="s6-nav">
+        <div class="swiper-button-prev s6-prev"><img src="assets/img/images-slider-arrow.png" alt=""></div>
+        <div class="swiper-button-next s6-next"><img src="assets/img/images-slider-arrow.png" alt=""></div>
+      </div>
+    </div>
+
+    <a href="https://zubalenok.online/shop/item/13297" data-pay="v1" class="s6-cta check-click">GET LIFETIME ACCESS</a>
+</div>
+
+ 
+
+<!-- FIG:excited -->
+<div class="fig-sec fig-excited" style="position:relative;width:428px;height:505px;margin:0 auto;overflow:hidden">
+<img src="assets/img/flat/excited.webp" width="428" height="505" alt="" style="position:absolute;left:0;top:0;width:428px;height:505px;display:block">
+</div>
+<!-- /FIG:excited -->
+<!-- FIG:bonuses -->
+<div class="fig-sec fig-bonuses" style="position:relative;width:428px;height:1224px;margin:0 auto;overflow:hidden">
+<img src="assets/img/flat/bonuses.webp" width="428" height="1224" alt="" style="position:absolute;left:0;top:0;width:428px;height:1224px;display:block">
+<a href="https://zubalenok.online/shop/item/13297" data-pay="v1" aria-label="Get it now for $99" style="position:absolute;left:38px;top:1102px;width:352px;height:58px;border-radius:24px"></a>
+</div>
+<!-- /FIG:bonuses -->
+  <div class="s5">
+    <div class="s5-header">
+      <div class="s5-title-group">
+        <h2 class="s5-title-white">Your path from</h2>
+        <h2 class="s5-title-red">zero to splits</h2>
+      </div>
+    </div>
+    <div class="s5-grid">
+      <div class="s5-card video-card-item">
+        <div class="s5-card-text">
+          <h4 class="s5-card-title">START</h4>
+          <p class="s5-card-desc">3 beginner lessons to wake up tight hips and hamstrings</p>
+        </div>
+        <div class="s5-video-container video-wrapper-small">
+          <video class="video-player" poster="assets/img/fig/path-start.webp" data-src="https://itden-cdn.b-cdn.net/splits/34.mp4" playsinline loop muted preload="metadata"></video>
+          <div class="video-overlay"><div class="video-play-btn" aria-label="Play"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="38"/><path d="M32 26l22 14-22 14z"/></svg></div></div>
+        </div>
+      </div>
+      <div class="s5-card video-card-item">
+        <div class="s5-card-text">
+          <h4 class="s5-card-title">FRONT SPLIT</h4>
+          <p class="s5-card-desc">Open your hamstrings and hip flexors, side by side</p>
+        </div>
+        <div class="s5-video-container video-wrapper-small">
+          <video class="video-player" poster="assets/img/fig/path-front.webp" data-src="https://itden-cdn.b-cdn.net/vd/Days%2022%E2%80%9330%20sup%20front%20split.mov" playsinline loop muted preload="metadata"></video>
+          <div class="video-overlay"><div class="video-play-btn" aria-label="Play"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="38"/><path d="M32 26l22 14-22 14z"/></svg></div></div>
+        </div>
+      </div>
+      <div class="s5-card video-card-item">
+        <div class="s5-card-text">
+          <h4 class="s5-card-title">MIDDLE SPLIT</h4>
+          <p class="s5-card-desc">Build hip mobility and inner-thigh strength, step by step</p>
+        </div>
+        <div class="s5-video-container video-wrapper-small">
+          <video class="video-player" poster="assets/img/fig/path-middle.webp" data-src="https://itden-cdn.b-cdn.net/vd/Days%2022%E2%80%9330%20MS-L12%20later%20cut%20.mp4" playsinline loop muted preload="metadata"></video>
+          <div class="video-overlay"><div class="video-play-btn" aria-label="Play"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="38"/><path d="M32 26l22 14-22 14z"/></svg></div></div>
+        </div>
+      </div>
+      <div class="s5-card video-card-item">
+        <div class="s5-card-text">
+          <h4 class="s5-card-title">MAINTAIN</h4>
+          <p class="s5-card-desc">Repeat any lesson and keep both splits for life</p>
+        </div>
+        <div class="s5-video-container video-wrapper-small">
+          <video class="video-player" poster="assets/img/fig/path-maintain.webp" data-src="https://itden-cdn.b-cdn.net/vd/Days%208%E2%80%9314%20front%20cut.mov" playsinline loop muted preload="metadata"></video>
+          <div class="video-overlay"><div class="video-play-btn" aria-label="Play"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="38"/><path d="M32 26l22 14-22 14z"/></svg></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- FIG:why -->
+<div class="fig-sec fig-why" style="position:relative;width:428px;height:889px;margin:0 auto;overflow:hidden">
+<img src="assets/img/flat/why.webp" width="428" height="889" alt="" style="position:absolute;left:0;top:0;width:428px;height:889px;display:block">
+</div>
+<!-- /FIG:why -->
+<!-- FIG:who -->
+<div class="fig-sec fig-who" style="position:relative;width:428px;height:768px;margin:0 auto;overflow:hidden">
+<img src="assets/img/flat/who.webp" width="428" height="768" alt="" style="position:absolute;left:0;top:0;width:428px;height:768px;display:block">
+</div>
+<!-- /FIG:who -->
+  <!-- ════════════════════════════════════ MONEY BACK ═══════════════════════ -->
+  <!-- ════════════════════════════════════ REAL WOMEN ═══════════════════════ -->
+  <section class="rw">
+    <h2 class="rw-title"><span class="rw-title-red">REAL WOMEN</span><span class="rw-title-white">REAL PROGRESS</span></h2>
+    <div class="swiper rw-swiper">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide rw-slide">
+            <div class="rw-photos">
+              <figure class="rw-photo"><img src="assets/img/reviews/r1-before.webp" alt="" loading="lazy"><figcaption class="rw-tag">before</figcaption></figure>
+              <figure class="rw-photo"><img src="assets/img/reviews/r1-after.webp" alt="" loading="lazy"><figcaption class="rw-tag">after 8 weeks</figcaption></figure>
+            </div>
+            <p class="rw-quote">I stopped thinking I was just ‘not flexible enough.’”
+I’d stretched but never really knew what I was working on. With the  Full body mobility - every lesson gave me a clear next step &amp; progression</p>
+            <div class="rw-author">
+              <img class="rw-avatar" src="assets/img/reviews/avatar-1.webp" alt="" loading="lazy">
+              <div class="rw-author-text"><b class="rw-name">Lucie</b><span class="rw-loc">32, Germany</span></div>
+            </div>
+          </div>
+          <div class="swiper-slide rw-slide">
+            <div class="rw-photos">
+              <figure class="rw-photo"><img src="assets/img/reviews/r2-before.webp" alt="" loading="lazy"><figcaption class="rw-tag">before</figcaption></figure>
+              <figure class="rw-photo"><img src="assets/img/reviews/r2-after.webp" alt="" loading="lazy"><figcaption class="rw-tag">after 8 weeks</figcaption></figure>
+            </div>
+            <p class="rw-quote">I thought I just needed to stretch harder. The program showed me where I actually needed more mobility and control. Seeing the distance change week by week made me want to keep going.</p>
+            <div class="rw-author">
+              <img class="rw-avatar" src="assets/img/reviews/avatar-2.webp" alt="" loading="lazy">
+              <div class="rw-author-text"><b class="rw-name">Daniela</b><span class="rw-loc">34, CROATIA</span></div>
+            </div>
+          </div>
+          <div class="swiper-slide rw-slide">
+            <div class="rw-photos">
+              <figure class="rw-photo"><img src="assets/img/reviews/r3-before.webp" alt="" loading="lazy"><figcaption class="rw-tag">before</figcaption></figure>
+              <figure class="rw-photo"><img src="assets/img/reviews/r3-after.webp" alt="" loading="lazy"><figcaption class="rw-tag">after 8 weeks</figcaption></figure>
+            </div>
+            <p class="rw-quote">Every little improvement made me trust my body more. Now the split feels like something I’m building, not something I was either born able to do or not.</p>
+            <div class="rw-author">
+              <img class="rw-avatar" src="assets/img/reviews/avatar-3.webp" alt="" loading="lazy">
+              <div class="rw-author-text"><b class="rw-name">Andrew</b><span class="rw-loc">36, Germany</span></div>
+            </div>
+          </div>
+          <div class="swiper-slide rw-slide">
+            <div class="rw-photos">
+              <figure class="rw-photo"><img src="assets/img/reviews/r4-before.webp" alt="" loading="lazy"><figcaption class="rw-tag">before</figcaption></figure>
+              <figure class="rw-photo"><img src="assets/img/reviews/r4-after.webp" alt="" loading="lazy"><figcaption class="rw-tag">after 8 weeks</figcaption></figure>
+            </div>
+            <p class="rw-quote">When I started, my hamstrings felt so tight and I always had to force my way into a deeper fold. Now I can reach much further with less tension, better control, and it actually feels easier in my body.</p>
+            <div class="rw-author">
+              <img class="rw-avatar" src="assets/img/reviews/avatar-4.webp" alt="" loading="lazy">
+              <div class="rw-author-text"><b class="rw-name">Maria</b><span class="rw-loc">26, UK</span></div>
+            </div>
+          </div>
+          <div class="swiper-slide rw-slide">
+            <div class="rw-photos">
+              <figure class="rw-photo"><img src="assets/img/reviews/r5-before.webp" alt="" loading="lazy"><figcaption class="rw-tag">before</figcaption></figure>
+              <figure class="rw-photo"><img src="assets/img/reviews/r5-after.webp" alt="" loading="lazy"><figcaption class="rw-tag">after 8 weeks</figcaption></figure>
+            </div>
+            <p class="rw-quote">Just finished my Front Split training, and I’m honestly amazed by the progress! 😍 I’m so happy with how far I’ve come, and I can’t thank you enough for creating such an amazing program</p>
+            <div class="rw-author">
+              <img class="rw-avatar" src="assets/img/reviews/avatar-5.webp" alt="" loading="lazy">
+              <div class="rw-author-text"><b class="rw-name">Lucie</b><span class="rw-loc">32, Germany</span></div>
+            </div>
+          </div>
+          <div class="swiper-slide rw-slide">
+            <div class="rw-photos">
+              <figure class="rw-photo"><img src="assets/img/reviews/r6-before.webp" alt="" loading="lazy"><figcaption class="rw-tag">before</figcaption></figure>
+              <figure class="rw-photo"><img src="assets/img/reviews/r6-after.webp" alt="" loading="lazy"><figcaption class="rw-tag">after 10 weeks</figcaption></figure>
+            </div>
+            <p class="rw-quote">I wanted to share some feedback on the Middle Split program! I took a two-week break and then came back to it, and the progress is actually insane! I’m so happy with the program and the results! 💗💗💗</p>
+            <div class="rw-author">
+              <img class="rw-avatar" src="assets/img/reviews/avatar-6.webp" alt="" loading="lazy">
+              <div class="rw-author-text"><b class="rw-name">Teodora</b><span class="rw-loc">29, Italy</span></div>
+            </div>
+          </div>
+          <div class="swiper-slide rw-slide">
+            <div class="rw-photos">
+              <figure class="rw-photo"><img src="assets/img/reviews/r7-before.webp" alt="" loading="lazy"><figcaption class="rw-tag">before</figcaption></figure>
+              <figure class="rw-photo"><img src="assets/img/reviews/r7-after.webp" alt="" loading="lazy"><figcaption class="rw-tag">after 12 weeks</figcaption></figure>
+            </div>
+            <p class="rw-quote">I'm so proud of my progress with the Front &amp; Middle Split course! 🥹✨ I'm getting closer and closer to touching the floor, and it's so exciting to see how far I've come. Can't wait to see what's next!</p>
+            <div class="rw-author">
+              <img class="rw-avatar" src="assets/img/reviews/avatar-7.webp" alt="" loading="lazy">
+              <div class="rw-author-text"><b class="rw-name">Sophie</b><span class="rw-loc">34, USA</span></div>
+            </div>
+          </div>
+          <div class="swiper-slide rw-slide">
+            <div class="rw-photos">
+              <figure class="rw-photo"><img src="assets/img/reviews/r8-before.webp" alt="" loading="lazy"><figcaption class="rw-tag">before</figcaption></figure>
+              <figure class="rw-photo"><img src="assets/img/reviews/r8-after.webp" alt="" loading="lazy"><figcaption class="rw-tag">after 12 weeks</figcaption></figure>
+            </div>
+            <p class="rw-quote">I’m so proud of my progress the course! 🥹!  I’m getting closer and closer to touching the floor, and it’s so exciting to see how far I’ve come. Can’t wait to see what’s next!</p>
+            <div class="rw-author">
+              <img class="rw-avatar" src="assets/img/reviews/avatar-8.webp" alt="" loading="lazy">
+              <div class="rw-author-text"><b class="rw-name">Anna</b><span class="rw-loc">30, Spain</span></div>
+            </div>
+          </div>
+          <div class="swiper-slide rw-slide">
+            <div class="rw-photos">
+              <figure class="rw-photo"><img src="assets/img/reviews/r9-before.webp" alt="" loading="lazy"><figcaption class="rw-tag">before</figcaption></figure>
+              <figure class="rw-photo"><img src="assets/img/reviews/r9-after.webp" alt="" loading="lazy"><figcaption class="rw-tag">after 12 weeks</figcaption></figure>
+            </div>
+            <p class="rw-quote">Had to share this! I’m so proud of how far I’ve come with the course. Seeing my progress makes me want to keep going</p>
+            <div class="rw-author">
+              <img class="rw-avatar" src="assets/img/reviews/avatar-9.webp" alt="" loading="lazy">
+              <div class="rw-author-text"><b class="rw-name">Alana</b><span class="rw-loc">26, Brazil</span></div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="rw-controls">
+      <div class="rw-progress"><span class="rw-progress-bar"></span></div>
+      <button class="rw-nav rw-prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="rw-nav rw-next" type="button" aria-label="Next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════ GUARANTEE ═════════════════════════ -->
+  <section class="guarantee" aria-labelledby="guarantee-title">
+    <h2 id="guarantee-title" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">Guarantee</h2>
+<!-- FIG:guarantee -->
+<div class="fg-root" style="position:relative;overflow:hidden;width:428px;height:245px;">
+<div style="position:absolute;left:0px;top:0px;width:428px;height:245px;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px;width:428px;height:245px;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px;width:428px;height:245px;background:radial-gradient(ellipse at 50% 50%,rgba(253,243,195,1) 0%,rgba(222,184,112,1) 57.21%,rgba(139,101,45,1) 100%);box-shadow:inset 0px 0px 12.09px 0px rgba(254,248,209,1)">
+<div style="position:absolute;left:26.87px;top:26.87px;width:374.27px;height:106.35px">
+<div style="position:absolute;left:15.76px;top:0px;width:85.08px;height:106.35px;overflow:hidden"><img src="assets/img/fig/g-dbbc71bd8d.webp" alt="" style="position:absolute;left:-11.19px;top:0px;width:106.35px;height:106.35px;max-width:none">
+</div>
+<div style="position:absolute;left:116.51px;top:7.17px;width:242px;height:92px">
+<div style="position:absolute;left:0px;top:0px;width:242px;height:92px;text-align:center;white-space:nowrap;margin:0;height:auto"><span style="font-family:'League Gothic',sans-serif;font-weight:400;font-size:74.39px;line-height:91.73px;text-transform:uppercase">GUARANTEE</span></div>
+</div>
+</div>
+<div style="position:absolute;left:26.87px;top:148.89px;width:374.27px;height:69px">
+<div style="position:absolute;left:0px;top:0px;width:374.27px;height:23px">
+<div style="position:absolute;left:0px;top:0px;width:374.27px;height:23px;text-align:center;white-space:nowrap;margin:0;height:auto"><span style="font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:16px;line-height:22.78px;text-transform:uppercase;color:rgba(31,26,15,1)">We offer a 14-day money-back guarantee:</span></div>
+</div>
+<div style="position:absolute;left:0px;top:23px;width:374.27px;height:46px;text-align:center;white-space:pre-wrap;margin:0;height:auto"><span style="font-family:'Source Sans 3',sans-serif;font-weight:400;font-size:16px;line-height:22.78px;color:rgba(31,26,15,1)">if the courses don’t meet your expectations, we’ll refund your payment. You risk nothing</span></div>
+</div>
+<div style="position:absolute;left:0;top:0;width:100%;height:100%;box-sizing:border-box;border-radius:0;padding:2.24px;background:radial-gradient(ellipse at 50% 50%,rgba(255,255,255,0.1) 0%,rgba(254,253,240,1) 54.33%,rgba(255,255,255,0.1) 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none"></div>
+</div>
+<div style="position:absolute;left:-5.3px;top:10.08px;width:12.31px;height:199.27px;border-radius:50%;background:linear-gradient(180deg,rgba(205,155,76,1) 0%,rgba(205,155,76,0) 100%);filter:blur(22.17px)"></div>
+<div style="position:absolute;left:121.2px;top:-2.24px;width:207.1px;height:12.31px;transform:rotate(90deg);border-radius:50%;background:linear-gradient(180deg,rgba(205,155,76,1) 0%,rgba(205,155,76,0) 100%);filter:blur(22.17px)"></div>
+<div style="position:absolute;left:181.66px;top:-2.24px;width:64.93px;height:12.31px;transform:rotate(90deg);border-radius:50%;background:linear-gradient(180deg,rgba(205,155,76,1) 0%,rgba(205,155,76,0) 100%);filter:blur(21.61px)"></div>
+<img src="assets/img/fig/6501-6921.svg" alt="" style="position:absolute;left:-0.82px;top:89.56px;width:4.48px;height:64.93px;display:block">
+</div>
+</div>
+</div>
+<!-- /FIG:guarantee -->
+  </section>
+
+  <!-- ════════════════════════════════════ MEET YOUR COACH ══════════════════ -->
+  <section class="coach">
+    <div class="coach__card">
+      <h2 class="coach__title">Meet your coach</h2>
+      <span class="coach__pill">Expertise That Moves Millions</span>
+      <div class="coach__stats">
+        <div class="coach__stat"><b>2.2M</b><span>Instagram<br>followers</span></div>
+        <div class="coach__stat"><b>60.000+</b><span>Happy<br>Students</span></div>
+        <div class="coach__stat"><b>12+</b><span>Years in<br>PRO Sports</span></div>
+      </div>
+      <div class="coach__bio">
+        <h3>Hi there! I am Karyna Zubalenok</h3>
+        <p>Professional sport has been part of my life since childhood, and for more than 12 years I've been helping people with their mobility and flexibility.</p>
+        <p class="coach__bio-bold">20,000+ students trained splits with me. Now I share my secret method in one step-by-step program, so you can reach your splits at home.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════ ST7 ══════════════════════════════ -->
+  <div class="fig-sec fig-results" style="position:relative;width:428px;height:821px;margin:0 auto;overflow:hidden">
+<img src="assets/img/flat/results.webp" width="428" height="821" alt="" style="position:absolute;left:0;top:0;width:428px;height:821px;display:block">
+</div>
+
+
+  <!-- ════════════════════════════════════ FAQ ══════════════════════════════ -->
+  <div class="faq-section">
+    <div class="s7">
+      <h2 class="mainTitle">FAQ</h2>
+      <div class="s7__container">
+        <div class="s7__item">
+          <div class="s7__question">
+            <div class="s7__q-icon"><img src="assets/img/images-q.webp" alt="Q"></div>
+            <span class="s7__q-text">Is this really one payment?</span>
+            <div class="s7__arrow"><img src="assets/img/img21.webp" alt="arrow"></div>
+          </div>
+          <div class="s7__answer"><div class="s7__answer-inner"><div class="s7__answer-bubble">Yes. You pay $<span style="font-family: 'SourceSans3-Bold';" data-pay-amount="v1"></span> once and both courses are yours forever. No subscription, nothing renews, nothing to cancel</div><img src="assets/img/images-img8.webp" alt="Karyna" class="s7__avatar"></div></div>
+        </div>
+        <div class="s7__item">
+          <div class="s7__question">
+            <div class="s7__q-icon"><img src="assets/img/images-q.webp" alt="Q"></div>
+            <span class="s7__q-text">What does lifetime access mean?</span>
+            <div class="s7__arrow"><img src="assets/img/img21.webp" alt="arrow"></div>
+          </div>
+          <div class="s7__answer"><div class="s7__answer-inner"><div class="s7__answer-bubble">As long as the courses exist, you have them. Train now, pause, come back in a year – your access never expires</div><img src="assets/img/images-img8.webp" alt="Karyna" class="s7__avatar"></div></div>
+        </div>
+        <div class="s7__item">
+          <div class="s7__question">
+            <div class="s7__q-icon"><img src="assets/img/images-q.webp" alt="Q"></div>
+            <span class="s7__q-text">I’ve never stretched before. Is it too hard for me?</span>
+            <div class="s7__arrow"><img src="assets/img/img21.webp" alt="arrow"></div>
+          </div>
+          <div class="s7__answer"><div class="s7__answer-inner"><div class="s7__answer-bubble">The program starts with 3 beginner lessons and day-1 adaptation. It’s built for complete beginners, step by step</div><img src="assets/img/images-img8.webp" alt="Karyna" class="s7__avatar"></div></div>
+        </div>
+        <div class="s7__item">
+          <div class="s7__question">
+            <div class="s7__q-icon"><img src="assets/img/images-q.webp" alt="Q"></div>
+            <span class="s7__q-text">How long until I see results?</span>
+            <div class="s7__arrow"><img src="assets/img/img21.webp" alt="arrow"></div>
+          </div>
+          <div class="s7__answer"><div class="s7__answer-inner"><div class="s7__answer-bubble">With consistent practice you’ll feel noticeable progress in 2–4 weeks. And with lifetime access, there’s no deadline pressure</div><img src="assets/img/images-img8.webp" alt="Karyna" class="s7__avatar"></div></div>
+        </div>
+        <div class="s7__item">
+          <div class="s7__question">
+            <div class="s7__q-icon"><img src="assets/img/images-q.webp" alt="Q"></div>
+            <span class="s7__q-text">How much time do I need per day?</span>
+            <div class="s7__arrow"><img src="assets/img/img21.webp" alt="arrow"></div>
+          </div>
+          <div class="s7__answer"><div class="s7__answer-inner"><div class="s7__answer-bubble">20-30 minutes. Every lesson is fully planned with on-screen timers</div><img src="assets/img/images-img8.webp" alt="Karyna" class="s7__avatar"></div></div>
+        </div>
+        <div class="s7__item">
+          <div class="s7__question">
+            <div class="s7__q-icon"><img src="assets/img/images-q.webp" alt="Q"></div>
+            <span class="s7__q-text">Do I need special equipment?</span>
+            <div class="s7__arrow"><img src="assets/img/img21.webp" alt="arrow"></div>
+          </div>
+          <div class="s7__answer"><div class="s7__answer-inner"><div class="s7__answer-bubble">Just a mat and yoga blocks. Everything is designed for home training</div><img src="assets/img/images-img8.webp" alt="Karyna" class="s7__avatar"></div></div>
+        </div>
+        <div class="s7__item">
+          <div class="s7__question">
+            <div class="s7__q-icon"><img src="assets/img/images-q.webp" alt="Q"></div>
+            <span class="s7__q-text">How do I get my gift (InHome Power)?</span>
+            <div class="s7__arrow"><img src="assets/img/img21.webp" alt="arrow"></div>
+          </div>
+          <div class="s7__answer"><div class="s7__answer-inner"><div class="s7__answer-bubble">Access to your courses and the gift arrives in one email right after payment</div><img src="assets/img/images-img8.webp" alt="Karyna" class="s7__avatar"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="contacts">
+      <h2 class="contacts__title">CONTACTS</h2>
+      <div class="contacts__grid">
+        <a href="https://www.instagram.com/zubalenok" class="contacts__card">
+          <img src="assets/img/inst.webp" alt="Instagram" class="contacts__icon">
+          <span class="contacts__label">Zubalenok</span>
+        </a>
+        <a href="mailto:SUPPORT_ZUBALENOK@ZBL.AGENCY" class="contacts__card">
+          <img src="assets/img/email.webp" alt="Email" class="contacts__icon contacts__icon--email">
+          <span class="contacts__label">Email</span>
+        </a>
+        <a href="https://www.instagram.com/zubalenok.team" class="contacts__card">
+          <img src="assets/img/images-support.webp" alt="Support" class="contacts__icon">
+          <span class="contacts__label">Support</span>
+        </a>
+      </div>
+      <a href="/policy" class="contacts__policy">PRIVACY POLICY AND USER AGREEMENT</a>
+      <p class="contacts__copyright">© 2026 ,  ZBL COMPANY BV, ROESELARE, BE 1022336448</p>
+      <img src="assets/img/payments.webp" width="256" height="20" alt="Payment Methods" class="contacts__payments">
+    </section>
+  </div>
+
+  <!-- ════════════════════════════════════ FOOTER ═══════════════════════════ -->
+  <div class="footer-bg" id="footer-bg">
+    <div class="footer">
+      <div class="footer-top-row">
+        <h3 class="footer-title">Buy Today, <br>Get a Free Gift</h3>
+        <div class="footer-timer">
+          <div class="timer-box">00</div>
+          <span class="timer-divider">:</span>
+          <div class="timer-box">59</div>
+          <span class="timer-divider">:</span>
+          <div class="timer-box">59</div>
+        </div>
+      </div>
+      <a class="footer-cta-button check-click" href="https://zubalenok.online/shop/item/13297" data-pay="v1">
+        UNLOCK LIFETIME ACCESS –
+        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="17" viewBox="0 0 11 17" fill="none"><path d="M4.58868 16.2455V0H6.11219V16.2455H4.58868ZM5.51367 14.7852C4.38917 14.7852 3.42186 14.6027 2.61174 14.2376C1.81371 13.8604 1.191 13.3371 0.74362 12.6679C0.30833 11.9864 0.0604569 11.1893 0 10.2767L3.0833 10.1124C3.15585 10.5748 3.28885 10.9703 3.48232 11.2989C3.67578 11.6152 3.94179 11.8586 4.28035 12.029C4.61891 12.1872 5.0421 12.2663 5.54994 12.2663C5.94896 12.2663 6.28752 12.2237 6.56562 12.1385C6.84372 12.0412 7.05532 11.8951 7.20041 11.7004C7.3576 11.5057 7.4362 11.2684 7.4362 10.9885C7.4362 10.7208 7.36969 10.4896 7.23669 10.2949C7.11578 10.088 6.87395 9.90551 6.51121 9.74731C6.14847 9.58912 5.6104 9.437 4.89701 9.29098C3.7846 9.03543 2.88379 8.75554 2.19458 8.45132C1.51747 8.13493 1.02172 7.73335 0.707345 7.2466C0.39297 6.75984 0.235782 6.14531 0.235782 5.403C0.235782 4.62419 0.429244 3.94273 0.816168 3.35862C1.20309 2.77452 1.76534 2.32426 2.50292 2.00787C3.24049 1.67931 4.12316 1.51503 5.15093 1.51503C6.22706 1.51503 7.13391 1.70365 7.87149 2.08089C8.62115 2.44595 9.20154 2.95705 9.61264 3.61417C10.0238 4.27129 10.2716 5.03185 10.3563 5.89585L7.2911 6.02362C7.25483 5.60988 7.146 5.25089 6.96463 4.94667C6.78326 4.64245 6.53539 4.41124 6.22101 4.25304C5.91873 4.08268 5.54994 3.99749 5.11465 3.99749C4.55845 3.99749 4.12316 4.11918 3.80878 4.36256C3.5065 4.60594 3.35536 4.91625 3.35536 5.29348C3.35536 5.58554 3.42186 5.82892 3.55486 6.02362C3.69996 6.21832 3.94783 6.3826 4.29848 6.51646C4.64913 6.65032 5.12674 6.77809 5.73131 6.89978C6.94045 7.13099 7.89567 7.42913 8.59697 7.7942C9.29827 8.15927 9.79401 8.59735 10.0842 9.10844C10.3865 9.60737 10.5376 10.1854 10.5376 10.8425C10.5376 11.6457 10.3321 12.3454 9.92097 12.9417C9.52196 13.5258 8.94762 13.9821 8.19795 14.3107C7.44829 14.6271 6.55353 14.7852 5.51367 14.7852Z" fill="white"/></svg>
+        <span style="font-family: 'SourceSans3-Bold';" data-pay-amount="v1"></span>
+      </a>
+    </div>
+  </div>
+  
+  
+ 
+
+<script defer>
+document.addEventListener('DOMContentLoaded', () => {
+    const footer = document.getElementById('footer-bg');
+    if (!footer) return;
+    window.addEventListener('scroll', () => {
+        if (window.scrollY >= 600) { footer.classList.add('active'); }
+        else { footer.classList.remove('active'); }
+    });
+});
+</script>
+
+    <script src="assets/js/video-optimize.js?v=5"></script>
+    <script src="assets/js/video-slides.js"></script>
+    <script src="assets/js/video.js"></script>
+    <script src="assets/js/faq.js"></script>
+    <script src="assets/js/coach.js"></script>
+    <script src="assets/js/timer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/slider.js?v=24"></script>
+<!--th:pay=8--><script>
+document.addEventListener('DOMContentLoaded', function () {
+  var el = document.querySelector('.rw-swiper');
+  if (!el || typeof Swiper === 'undefined') return;
+  var bar = document.querySelector('.rw-progress-bar');
+  var sw = new Swiper(el, {
+    slidesPerView: 'auto',
+    spaceBetween: 24,
+    grabCursor: true,
+    navigation: { nextEl: '.rw-next', prevEl: '.rw-prev' },
+    on: {
+      progress: function (sw) {
+        var max = Math.max(1, sw.params.slidesPerView === 'auto' ? sw.slides.length - 1 : sw.slides.length - sw.params.slidesPerView);
+        var p = Math.min(1, Math.max(0, -sw.translate / (sw.slides.length * 392)));
+        if (bar) bar.style.width = Math.max(30, p * 100 + 30) + '%';
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>

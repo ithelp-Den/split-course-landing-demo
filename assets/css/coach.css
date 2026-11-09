@@ -1,0 +1,148 @@
+/* =====================================================================
+   coach.css — блок MEET YOUR COACH.
+   Макет 428px: 1 одиниця (--r) = 1/42.8 ширини блоку, як у refund.css.
+   ===================================================================== */
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.coach {
+  --r: calc(min(100vw, 440px) / 42.8);
+  width: min(100vw, 440px);
+  margin: 0 auto;
+  padding: calc(3.5 * var(--r)) 0;
+  background: #000;
+  color: #fff;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* nullStyle.css жорстко задає шрифти для span/p/h2/h3 — повертаємо успадкування */
+.coach :where(span, p, b, h2, h3) {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.coach,
+.coach * { box-sizing: border-box; }
+
+.coach__card {
+  position: relative;
+  width: 100%;
+  min-height: calc(72 * var(--r));
+  padding: calc(39.5 * var(--r)) calc(2.5 * var(--r)) calc(1.65 * var(--r));
+  border-radius: calc(2 * var(--r));
+  overflow: hidden;
+  background: #62031a url(../img/imgn3.webp) center top / 100% 100% no-repeat;
+}
+
+.coach__title {
+  position: absolute;
+  left: 0;
+  top: calc(2.4 * var(--r));
+  width: 100%;
+  font-family: 'Gilroy', 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: calc(3.5 * var(--r));
+  line-height: calc(4 * var(--r));
+  letter-spacing: calc(0.12 * var(--r));
+  text-align: center;
+  text-transform: uppercase;
+}
+.coach__pill {
+  position: absolute;
+  left: calc(15.7 * var(--r));
+  top: calc(5.4 * var(--r));
+  width: calc(22.3 * var(--r));
+  height: calc(3.2 * var(--r));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: calc(10 * var(--r));
+  background: linear-gradient(90deg, #B0002B 0%, #660A22 100%);
+  box-shadow: 0 calc(0.4 * var(--r)) calc(1 * var(--r)) rgba(0, 0, 0, 0.25);
+  transform: rotate(-1.5deg);
+  font-size: calc(1.6 * var(--r));
+  line-height: calc(2 * var(--r));
+}
+
+/* ── Цифри ── */
+.coach__stats {
+  position: relative;
+  width: 100%;
+  height: calc(10.35 * var(--r));
+  display: flex;
+  align-items: center;
+  border-radius: calc(2 * var(--r));
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(90deg, rgba(176, 0, 43, 0.92) 0%, rgba(102, 10, 34, 0.75) 100%);
+  box-shadow: 0 calc(0.4 * var(--r)) calc(1.2 * var(--r)) rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(calc(0.8 * var(--r)));
+  backdrop-filter: blur(calc(0.8 * var(--r)));
+}
+.coach__stat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.coach__stat:nth-child(1) { width: calc(11.05 * var(--r)); }
+.coach__stat:nth-child(2) { width: calc(17 * var(--r)); }
+.coach__stat:nth-child(3) { width: calc(9.75 * var(--r)); }
+.coach__stat + .coach__stat::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(-0.6 * var(--r));
+  bottom: calc(-0.6 * var(--r));
+  width: 1px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%);
+}
+.coach__stat b {
+  font-family: 'Gilroy', 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: calc(3.4 * var(--r));
+  line-height: calc(3.8 * var(--r));
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.coach__stat span {
+  font-size: calc(1.4 * var(--r));
+  line-height: calc(1.7 * var(--r));
+}
+
+/* ── Біо ── */
+.coach__bio {
+  margin-top: calc(1.2 * var(--r));
+  padding: calc(0.8 * var(--r)) calc(1.4 * var(--r)) calc(1.3 * var(--r));
+  border-radius: calc(2 * var(--r));
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.45);
+  -webkit-backdrop-filter: blur(calc(0.8 * var(--r)));
+  backdrop-filter: blur(calc(0.8 * var(--r)));
+}
+.coach__bio h3 {
+  font-size: calc(2.3 * var(--r));
+  font-weight: 700;
+  line-height: calc(2.9 * var(--r));
+  margin-bottom: calc(0.7 * var(--r));
+}
+.coach__bio p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: calc(1.6 * var(--r));
+  line-height: calc(2 * var(--r));
+}
+.coach__bio .coach__bio-bold {
+  color: #fff;
+  font-weight: 700;
+  line-height: calc(2.3 * var(--r));
+  margin-top: calc(0.3 * var(--r));
+}

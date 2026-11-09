@@ -1,0 +1,53 @@
+/* GUARANTEE — блок з макета (кадр 428 px). --u = 1px макета. */
+.guarantee {
+  --u: calc(min(100vw, 440px) / 428);
+  position: relative;
+  width: calc(428 * var(--u));
+  max-width: 100%;
+  height: calc(245 * var(--u));
+  margin: 0 auto;
+  overflow: hidden;
+  background: radial-gradient(ellipse 75% 120% at 50% 0%, #FDF3C3 0%, #DEB870 55%, #8B652D 100%);
+  font-family: 'Source Sans 3', sans-serif;
+  color: #1F1A0F;
+}
+.guarantee__badge {
+  position: absolute;
+  left: calc(43 * var(--u));
+  top: calc(27 * var(--u));
+  width: calc(85 * var(--u));
+  height: calc(106 * var(--u));
+  display: block;
+}
+.guarantee__title {
+  position: absolute;
+  left: calc(143 * var(--u));
+  top: calc(34 * var(--u));
+  width: calc(242 * var(--u));
+  height: calc(92 * var(--u));
+  margin: 0;
+  font-family: 'RWLeagueGothic', 'League Gothic', sans-serif;
+  font-weight: 400;
+  font-size: calc(74.39 * var(--u));
+  line-height: calc(91.73 * var(--u));
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background: radial-gradient(ellipse at 50% 50%, #413E34 0%, #1B1810 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.guarantee__text {
+  position: absolute;
+  left: calc(27 * var(--u));
+  top: calc(149 * var(--u));
+  width: calc(374 * var(--u));
+  margin: 0;
+  text-align: center;
+  font-size: calc(16 * var(--u));
+  line-height: calc(22.78 * var(--u));
+  font-weight: 400;
+}
+.guarantee__text b { font-weight: 700; text-transform: uppercase; }
+.guarantee__title { filter: drop-shadow(0 calc(1 * var(--u)) 0 #FFF3C4) drop-shadow(0 calc(-1 * var(--u)) 0 #5A4520); }

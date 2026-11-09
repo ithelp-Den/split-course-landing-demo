@@ -1,0 +1,29 @@
+/* Сторінка за макетом: полоси дизайну (2x webp) + живий слайдер + кліковані зони.
+   Висота полос = (y1−y0)·--u, тож стек збігається з макетом 428 px по пікселю. */
+.design-page {
+  --u: calc(min(100vw, 440px) / 428);
+  position: relative;
+  width: calc(428 * var(--u));
+  max-width: 100%;
+  margin: 0 auto;
+  background: #000;
+}
+.dz-tile {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+.design-slot {
+  position: relative;
+  height: calc(795 * var(--u));
+  overflow: visible;
+  background: #000;
+}
+.dz-link {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  text-decoration: none;
+  color: transparent;
+}
